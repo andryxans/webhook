@@ -16,7 +16,7 @@ def start(message):
 
 @bot.message_handler(func=lambda message: True, content_types=['text'])
 def echo_message(message):
-    bot.send_message(message.chat_id, message.text)
+    bot.send_message(message.chat.id, message.text)
 
 
 @server.route('/' + TOKEN, methods=['POST'])
