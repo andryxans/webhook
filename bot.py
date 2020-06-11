@@ -1,11 +1,11 @@
 import os
 
 from flask import Flask, request
-import config
+
 import telebot
 
-
-bot = telebot.TeleBot(config.token)
+TOKEN = '444966761:AAGNCSYImN_O3v-A2bkkSZc_bhIW-hBJ7FA'
+bot = telebot.TeleBot(TOKEN)
 server = Flask(__name__)
 
 
@@ -19,7 +19,7 @@ def echo_message(message):
     bot.reply_to(message, message.text)
 
 
-@server.route('/' + config.token, methods=['POST'])
+@server.route('/' + TOKEN, methods=['POST'])
 def getMessage():
     bot.process_new_updates([telebot.types.Update.de_json(request.stream.read().decode("utf-8"))])
     return "!", 200
@@ -28,7 +28,7 @@ def getMessage():
 @server.route("/")
 def webhook():
     bot.remove_webhook()
-    bot.set_webhook(url='https://stormy-peak-70033.herokuapp.com/' + config.token)
+    bot.set_webhook(url='https://your_heroku_project.com/' + TOKEN)
     return "!", 200
 
 
