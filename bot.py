@@ -24,7 +24,7 @@ def getMessage():
     bot.process_new_updates([telebot.types.Update.de_json(request.stream.read().decode("utf-8"))])
     return "!", 200
 
-@server.route('/', methods=["GET"])
+@server.route('/', methods=["GET"])  #возможно запускает прослушку хуков
 def index():
     bot.remove_webhook()
     bot.set_webhook(url="https://{}.herokuapp.com/{}".format(APP_NAME, TOKEN))
