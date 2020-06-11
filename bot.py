@@ -33,4 +33,4 @@ def webhook():
 
 
 if __name__ == "__main__":
-    server.run(host="https://stormy-peak-70033.herokuapp.com/", port=int(os.environ.get('PORT', 5000)))
+    server.run(host="54.165.86.182", port=int(os.environ.get('PORT', 5000)))
