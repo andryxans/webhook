@@ -28,7 +28,7 @@ def getMessage():
 @server.route("/")
 def webhook():
     bot.remove_webhook()
-    bot.set_webhook(url='https://guarded-escarpment-62368.herokuapp.com/' + config.token)
+    bot.set_webhook(url='https://stormy-peak-70033.herokuapp.com/' + config.token)
     return "!", 200
 
 
