@@ -1,1 +1,1 @@
-worker: gunicorn bot:server
+web: gunicorn bot:server
