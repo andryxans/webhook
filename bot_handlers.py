@@ -6,6 +6,7 @@ import utils
 from SQLighter import SQLighter
 from telebot import types
 import config
+import os
 
 
 @bot.message_handler(commands=['game'])
@@ -40,7 +41,7 @@ def check_answer(message):
         keyboard_hider = types.ReplyKeyboardRemove()
         # Если ответ правильный/неправильный
         if message.text == answer:
-            bot.send_message(message.chat.id, 'Верно!', reply_markup=keyboard_hider)
+            bot.send_message(message.chat.id, 'Верно!!!', reply_markup=keyboard_hider)
         else:
             bot.send_message(message.chat.id, 'Увы, Вы не угадали. Попробуйте ещё раз!', reply_markup=keyboard_hider)
             bot.send_message(message.chat.id, 'Чтобы начать новую игру, выберите команду /game', reply_markup=markup2)
