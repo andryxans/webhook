@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-from config import TOKEN
-=======
->>>>>>> 77a85147a843ef65f434aa2fe8b27be5a203f957
 from flask import Flask, request
 from config import APP_NAME
 from config import TOKEN
@@ -28,7 +24,3 @@ def webhook():
     return "!", 200
 
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 77a85147a843ef65f434aa2fe8b27be5a203f957
