@@ -8,6 +8,10 @@ from telebot import types
 import config
 import os
 
+@bot.message_handler(commands=['start'])
+def start(message):
+    bot.reply_to(message, 'Hello, ' + message.from_user.first_name)
+
 @bot.message_handler(commands=['game'])
 def game(message):
     # Подключаемся к БД
